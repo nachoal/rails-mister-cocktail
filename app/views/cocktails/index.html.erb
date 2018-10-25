@@ -1,5 +1,9 @@
-<h2>Cocktail list:</h2>
-<% @cocktails.each do |cocktail| %>
-  <%= link_to(cocktail.name, cocktail) %>
-<% end  %>
-<%= link_to("Add a new cocktail", new_cocktail_path) %>
+<div class="row">
+  <h2>Cocktail list:</h2>
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-md-4">
+      <%= link_to(cocktail.name, cocktail) %>
+    </div>
+  <% end  %>
+</div>
+<%= link_to("Add a new cocktail", new_cocktail_path, class:"btn btn-success") %>
