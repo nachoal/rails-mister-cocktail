@@ -2,8 +2,8 @@
   <h2>Cocktail list:</h2>
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-category">Drinks</div>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo.file.nil? ? 'https://kitt.lewagon.com/placeholder/cities/shanghai' : cloudinary_url(cocktail.photo) %>);">
+        <%# <div class="card-category">Drinks</div> %>
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
         </div>
@@ -11,6 +11,8 @@
         <%= link_to(cocktail.name, cocktail, class:"card-link") %>
       </div>
     </div>
+    <%# <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <%# <%= cocktail.photo.file.nil? ? "nil" : cocktail.photo %>
   <% end  %>
 </div>
 <%= link_to("Add a new cocktail", new_cocktail_path, class:"btn btn-success") %>
