@@ -1,5 +1,6 @@
 <div class="container">
   <h2><strong><%= @cocktail.name %></strong></h2>
+  <%= cl_image_tag @cocktail.photo, height: 400, width: 280 %>
   <h3 style="font-weight:300">Ingredients:</h3>
   <ul>
     <% @cocktail.doses.each do |dose| %>
