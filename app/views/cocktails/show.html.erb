@@ -1,6 +1,6 @@
 <div class="container">
-  <h2><%= @cocktail.name %></h2>
-  <h3>Ingredients:</h3>
+  <h2><strong><%= @cocktail.name %></strong></h2>
+  <h3 style="font-weight:300">Ingredients:</h3>
   <ul>
     <% @cocktail.doses.each do |dose| %>
     <li>

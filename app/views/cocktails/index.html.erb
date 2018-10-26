@@ -1,8 +1,15 @@
 <div class="row">
   <h2>Cocktail list:</h2>
   <% @cocktails.each do |cocktail| %>
-    <div class="col-md-4">
-      <%= link_to(cocktail.name, cocktail) %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-category">Drinks</div>
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
+        </div>
+        <!--<img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" alt="user" class="card-user">-->
+        <%= link_to(cocktail.name, cocktail, class:"card-link") %>
+      </div>
     </div>
   <% end  %>
 </div>
